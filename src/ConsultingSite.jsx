@@ -10,6 +10,7 @@ import {
 } from "./components/ui/card";
 import { Badge } from "./components/ui/badge";
 import { CheckCircle2, Menu, X } from "lucide-react";
+import logoOzark from "./assets/logo.png";
 
 export default function ConsultingSite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,31 +29,37 @@ export default function ConsultingSite() {
       {/* HEADER */}
       <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
         <div className="container flex h-16 items-center justify-between">
+              {/* LOGO */}
+    <div className="flex items-center gap-2">
+      <img 
+        src={logoOzark}
+        alt="Logo Ozark"
+        className="h-10 w-auto"
+      />
+      <span className="font-bold text-lg">Ozark Consultoria</span>
+    </div>
           <span className="font-bold text-lg">Ozark Consultoria</span>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <button
-              onClick={() => scrollToSection("solucao")}
-              className="hover:underline"
-            >
-              Solução
-            </button>
-            <button
-              onClick={() => scrollToSection("metodo")}
-              className="hover:underline"
-            >
-              Método
-            </button>
-            <button
-              onClick={() => scrollToSection("contato")}
-              className="hover:underline"
-            >
-              Contato
-            </button>
-            <Button size="sm" onClick={() => scrollToSection("contato")}>
-              Agendar conversa
-            </Button>
-          </nav>
+<nav className="hidden md:flex items-center gap-6 text-sm">
+  <button onClick={() => scrollToSection("solucao")} className="hover:underline">
+    Solução
+  </button>
+  <button onClick={() => scrollToSection("metodo")} className="hover:underline">
+    Método
+  </button>
+  <button onClick={() => scrollToSection("contato")} className="hover:underline">
+    Contato
+  </button>
+
+  {/* NOVO BOTÃO DE PRIVACIDADE */}
+  <button onClick={() => scrollToSection("privacidade")} className="hover:underline">
+    Privacidade
+  </button>
+
+  <Button size="sm" onClick={() => scrollToSection("contato")}>
+    Agendar conversa
+  </Button>
+</nav>
 
           <button
             className="md:hidden"
@@ -422,6 +429,26 @@ export default function ConsultingSite() {
 
       <footer className="py-6 border-t text-center text-sm text-muted-foreground">
         © {new Date().getFullYear()} Ozark Consultoria Empresarial
+
+        <section id="privacidade" className="py-24 bg-muted/30">
+  <div className="container max-w-4xl space-y-6">
+    <h2 className="text-3xl font-bold">Política de Privacidade</h2>
+
+    <p className="text-muted-foreground">
+      A Ozark Consultoria Financeira respeita sua privacidade. Seus dados não
+      serão compartilhados com terceiros sem autorização, exceto quando exigido
+      por lei. Suas informações são utilizadas exclusivamente para melhorar
+      sua experiência, oferecer serviços e manter comunicação relevante.
+    </p>
+
+    <p className="text-muted-foreground">
+      Ao utilizar nossos serviços, você concorda com o uso de dados para fins
+      operacionais, analíticos e de comunicação. Você pode solicitar a remoção
+      ou alteração de informações entrando em contato conosco.
+    </p>
+  </div>
+</section>
+
       </footer>
     </div>
   );
