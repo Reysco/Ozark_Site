@@ -2,42 +2,135 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos básicos de página */
+/* ===============================
+   TEMA ÚNICO DO SITE: ESCURO
+   =============================== */
+
+:root {
+  --bg: #020617;          /* Fundo geral */
+  --surface: #0f172a;     /* Superfícies, cards */
+  --card: #0f172a;        /* Fundo dos cards */
+  --muted: #94a3b8;       /* Texto secundário */
+  --primary: #ffffff;     /* Texto principal */
+  --accent: #60a5fa;      /* Azul claro */
+  --accent-2: #93c5fd;    /* Azul mais claro */
+  --border: #1e293b;      /* Borda escura */
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  @apply bg-white text-slate-900;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--primary);
+  line-height: 1.55;
 }
 
-/* Classes parecidas com o tema do shadcn (bem simples) */
-.bg-background {
-  @apply bg-white;
-}
-
-.text-foreground {
-  @apply text-slate-900;
-}
-
-.bg-muted\/30 {
-  background-color: rgb(248 250 252 / 0.3);
-}
-
-.bg-muted\/40 {
-  background-color: rgb(248 250 252 / 0.4);
-}
-
-.bg-muted\/50 {
-  background-color: rgb(248 250 252 / 0.5);
-}
-
-.text-muted-foreground {
-  @apply text-slate-500;
-}
-
-.text-primary {
-  @apply text-blue-700;
-}
-
-/* Container parecido com o do shadcn */
+/* Container */
 .container {
-  @apply mx-auto px-4;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Seções */
+section {
+  margin-bottom: 96px;
+}
+
+/* ===============================
+   CARDS GRANDES (PAGE-CARD)
+   =============================== */
+
+.page-card {
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 22px;
+  padding: 44px;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.8);
+  transition: all 0.2s ease-out;
+}
+
+.standard-card {
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ===============================
+   CARDS PEQUENOS (DECISION-CARD)
+   =============================== */
+
+.decision-card {
+  border-radius: 20px;
+  border: 1px solid rgba(129, 140, 248, 0.55);
+  padding: 36px;
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.8);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.decision-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 1);
+}
+
+/* Grid dos decision-cards */
+.decision-branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+}
+
+/* ===============================
+   FUNDORES (CARD DOS FUNDADORES)
+   =============================== */
+
+.founder-card {
+  border: 1px solid rgba(129, 140, 248, 0.55);
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  border-radius: 22px;
+  padding: 40px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
+}
+
+/* ===============================
+   LINKS
+   =============================== */
+
+a {
+  color: var(--accent);
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+
+/* ===============================
+   ANIMAÇÃO SUAVE
+   =============================== */
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-page {
+  animation: fadeSlideUp 0.4s ease-out;
+}
+
+/* ===============================
+   HOVER GENÉRICO
+   =============================== */
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.85);
 }
