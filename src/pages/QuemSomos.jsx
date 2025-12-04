@@ -88,7 +88,6 @@ export default function QuemSomos() {
 
             <p className="text-blue-300 font-semibold italic leading-relaxed">
               “Dados contam a história, dashboards mostram o caminho.
-              <br />
               O dinheiro segue quem sabe ler.”
             </p>
           </div>

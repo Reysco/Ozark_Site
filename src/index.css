@@ -3,18 +3,33 @@
 @tailwind utilities;
 
 /* ===============================
-   TEMA ÚNICO DO SITE: ESCURO
-   =============================== */
+   TEMAS LIGHT E DARK
+================================ */
 
-:root {
-  --bg: #020617;          /* Fundo geral */
-  --surface: #0f172a;     /* Superfícies, cards */
-  --card: #0f172a;        /* Fundo dos cards */
-  --muted: #94a3b8;       /* Texto secundário */
-  --primary: #ffffff;     /* Texto principal */
-  --accent: #60a5fa;      /* Azul claro */
-  --accent-2: #93c5fd;    /* Azul mais claro */
-  --border: #1e293b;      /* Borda escura */
+/* CLARO – totalmente branco, sem fundo azul */
+:root[data-theme='light'] {
+  --bg: #ffffff;             /* Fundo geral branco */
+  --surface: #ffffff;        /* superfícies/banners */
+  --card: #ffffff;           /* cards brancos */
+  --muted: #475569;          /* texto cinza escuro */
+  --primary: #0f172a;        /* texto preto/azul-escuro */
+  --accent: #1d4ed8;         /* links azul escuro */
+  --accent-2: #2563eb;
+  --border: #cfd6e0;         /* bordas claras */
+  --shadow: rgba(0, 0, 0, 0.08); /* sombra clara */
+}
+
+/* ESCURO — seu tema atual intacto */
+:root[data-theme='dark'] {
+  --bg: #020617;
+  --surface: #0f172a;
+  --card: #0f172a;
+  --muted: #94a3b8;
+  --primary: #ffffff;
+  --accent: #60a5fa;
+  --accent-2: #93c5fd;
+  --border: rgba(148, 163, 184, 0.35);
+  --shadow: rgba(15, 23, 42, 0.8);
 }
 
 * {
@@ -24,9 +39,9 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg);
+  background-color: var(--bg);     /* AGORA MUDA MESMO NO LIGHT */
   color: var(--primary);
-  line-height: 1.55;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Container */
@@ -43,16 +58,25 @@ section {
 }
 
 /* ===============================
+   BANNER DAS PÁGINAS
+================================ */
+
+.page-banner {
+  background-color: var(--surface);   /* branco no light, escuro no dark */
+  border-bottom: 1px solid var(--border);
+}
+
+/* ===============================
    CARDS GRANDES (PAGE-CARD)
-   =============================== */
+================================ */
 
 .page-card {
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: var(--card);                /* branco no light, escuro no dark */
+  border: 1px solid var(--border);
   border-radius: 22px;
   padding: 44px;
-  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.8);
-  transition: all 0.2s ease-out;
+  box-shadow: 0 18px 42px var(--shadow);
+  transition: all 0.25s ease;
 }
 
 .standard-card {
@@ -64,20 +88,20 @@ section {
 
 /* ===============================
    CARDS PEQUENOS (DECISION-CARD)
-   =============================== */
+================================ */
 
 .decision-card {
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 20px;
-  border: 1px solid rgba(129, 140, 248, 0.55);
   padding: 36px;
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
-  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.8);
+  box-shadow: 0 15px 30px var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .decision-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 22px 50px rgba(15, 23, 42, 1);
+  box-shadow: 0 22px 50px var(--shadow);
 }
 
 /* Grid dos decision-cards */
@@ -88,20 +112,21 @@ section {
 }
 
 /* ===============================
-   FUNDORES (CARD DOS FUNDADORES)
-   =============================== */
+   FUNDADORES
+================================ */
 
 .founder-card {
-  border: 1px solid rgba(129, 140, 248, 0.55);
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 22px;
   padding: 40px;
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
+  box-shadow: 0 16px 40px var(--shadow);
+  transition: all 0.25s ease;
 }
 
 /* ===============================
    LINKS
-   =============================== */
+================================ */
 
 a {
   color: var(--accent);
@@ -115,7 +140,7 @@ a:hover {
 
 /* ===============================
    ANIMAÇÃO SUAVE
-   =============================== */
+================================ */
 
 @keyframes fadeSlideUp {
   from { opacity: 0; transform: translateY(12px); }
@@ -127,10 +152,28 @@ a:hover {
 }
 
 /* ===============================
-   HOVER GENÉRICO
-   =============================== */
+   HOVER GLOBAL
+================================ */
 
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.85);
+  box-shadow: 0 18px 40px var(--shadow);
+}
+
+/* ===============================
+   AJUSTE DE CORES NO MODO CLARO
+   (override nas classes Tailwind)
+================================ */
+
+:root[data-theme='light'] .text-white {
+  color: #0f172a !important;
+}
+
+:root[data-theme='light'] .text-slate-300,
+:root[data-theme='light'] .text-slate-400 {
+  color: #475569 !important;
+}
+
+:root[data-theme='light'] .text-blue-300 {
+  color: #1d4ed8 !important;
 }

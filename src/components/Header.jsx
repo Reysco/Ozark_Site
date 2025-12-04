@@ -1,8 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 import logoOzark from "../assets/logo.png";
 
 export default function Header() {
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   const isActive = (path) =>
     location.pathname === path
@@ -15,7 +17,9 @@ export default function Header() {
 
         <Link to="/" className="flex items-center gap-3">
           <img src={logoOzark} alt="Logo" className="h-10 w-auto rounded-md shadow" />
-          <span className="text-white text-lg font-bold tracking-tight">Ozark Consultoria</span>
+          <span className="text-white text-lg font-bold tracking-tight">
+            Ozark Consultoria
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -25,6 +29,15 @@ export default function Header() {
           <Link to="/quem-somos" className={isActive("/quem-somos")}>Quem Somos</Link>
           <Link to="/contato" className={isActive("/contato")}>Contato</Link>
           <Link to="/privacidade" className={isActive("/privacidade")}>Privacidade</Link>
+
+          {/* BOTÃO MINIMALISTA LIGHT/DARK */}
+          <button
+            onClick={toggleTheme}
+            className="ml-4 w-8 h-8 rounded-full bg-slate-700 hover:bg-slate-600 flex items-center justify-center text-white transition"
+            title="Alterar tema"
+          >
+            {theme === "dark" ? "☀️" : "🌙"}
+          </button>
         </nav>
 
       </div>

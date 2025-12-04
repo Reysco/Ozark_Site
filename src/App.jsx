@@ -11,7 +11,7 @@ import Privacidade from "./pages/Privacidade";
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#020617] text-white">
+    <div className="min-h-screen flex flex-col">
       <Header />
 
       <div className="flex-1 pt-20">
