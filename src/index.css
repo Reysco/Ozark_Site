@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* ===============================
    TEMAS LIGHT E DARK
 ================================ */
@@ -39,7 +44,7 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background-color: var(--bg);     /* AGORA MUDA MESMO NO LIGHT */
+  background-color: var(--bg);
   color: var(--primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -162,18 +167,49 @@ a:hover {
 
 /* ===============================
    AJUSTE DE CORES NO MODO CLARO
-   (override nas classes Tailwind)
+   (para textos do conteúdo, NÃO mexe no header/footer)
 ================================ */
 
-:root[data-theme='light'] .text-white {
-  color: #0f172a !important;
-}
-
+/* deixar textos "acinzentados" mais escuros no modo claro */
 :root[data-theme='light'] .text-slate-300,
 :root[data-theme='light'] .text-slate-400 {
   color: #475569 !important;
 }
 
+/* azul de destaque mais escuro no modo claro */
 :root[data-theme='light'] .text-blue-300 {
   color: #1d4ed8 !important;
+}
+
+/* ===============================
+   FOOTER SEMPRE COM TEXTO BRANCO
+================================ */
+
+footer,
+footer * {
+  color: #ffffff !important;
+}
+
+/* ==========================================
+   TÍTULOS E SUBTÍTULOS DEVEM FICAR PRETOS NO MODO CLARO
+   ========================================== */
+
+:root[data-theme='light'] h1,
+:root[data-theme='light'] h2,
+:root[data-theme='light'] h3,
+:root[data-theme='light'] h4,
+:root[data-theme='light'] h5,
+:root[data-theme='light'] h6 {
+  color: #0f172a !important;   /* preto/azul escuro */
+}
+
+/* listas e subtítulos */
+:root[data-theme='light'] li,
+:root[data-theme='light'] strong {
+  color: #0f172a !important;
+}
+
+/* textos que estão com classe “text-blue-300” mas não devem ser azuis no light */
+:root[data-theme='light'] .force-dark-title {
+  color: #0f172a !important;
 }

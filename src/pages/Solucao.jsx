@@ -1,16 +1,21 @@
 import PageLayout from "../components/PageLayout";
-import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "../components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardTitle,
+  CardDescription,
+} from "../components/ui/card";
 
 export default function Solucao() {
   return (
     <PageLayout
+      id="solucao"
       eyebrow="Solução"
       title="Governança Digital 360"
       subtitle="Estrutura completa de processos, dados e finanças para empresas crescerem com previsibilidade."
     >
-
       <section className="grid md:grid-cols-3 gap-10">
-
         <div className="decision-card hover-lift">
           <CardHeader>
             <CardTitle>Desempenho</CardTitle>
@@ -46,9 +51,7 @@ export default function Solucao() {
             <p>• Rotina de gestão.</p>
           </CardContent>
         </div>
-
       </section>
-
     </PageLayout>
   );
 }

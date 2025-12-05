@@ -4,16 +4,17 @@ import { Button } from "../components/ui/button";
 export default function Contato() {
   return (
     <PageLayout
+      id="contato"
       eyebrow="Contato"
       title="Vamos conversar?"
       subtitle="Conte sobre o momento da sua empresa."
     >
-
       <section className="space-y-8 text-slate-300">
-
         <div>
           <h2 className="text-2xl font-bold text-white">Canais</h2>
-          <p className="mt-2">Instagram: @ozark_consultoria_financeira</p>
+          <p className="mt-2">
+            Instagram: @ozark_consultoria_financeira
+          </p>
           <p className="mt-1">E-mail: contato@ozark.com.br</p>
         </div>
 
@@ -26,10 +27,10 @@ export default function Contato() {
           </ul>
         </div>
 
-        <Button size="lg" className="mt-4">Agendar conversa</Button>
-
+        <Button size="lg" className="mt-4">
+          Agendar conversa
+        </Button>
       </section>
-
     </PageLayout>
   );
 }

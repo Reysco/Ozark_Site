@@ -1,12 +1,13 @@
 import logoOzark from "../assets/logo.png";
 
-export default function PageLayout({ eyebrow, title, subtitle, children }) {
+export default function PageLayout({ id, eyebrow, title, subtitle, children }) {
   return (
-    <div className="w-full">
-      {/* Banner da página – segue o tema (page-banner em index.css) */}
+    <div id={id} className="w-full scroll-mt-24">
+      {/* Banner da página */}
       <section className="w-full page-banner">
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-10 px-6 py-10">
-          <div className="h-24 w-24 rounded-full shadow-lg border border-slate-300 overflow-hidden">
+          {/* REMOVIDO border branco, mantendo apenas o círculo com sombra */}
+          <div className="h-24 w-24 rounded-full shadow-lg overflow-hidden">
             <img
               src={logoOzark}
               alt="Logo Ozark"
@@ -16,17 +17,19 @@ export default function PageLayout({ eyebrow, title, subtitle, children }) {
 
           <div className="flex-1">
             {eyebrow && (
-              <span className="text-xs uppercase tracking-wider font-semibold text-[var(--accent)]">
+              <span className="eyebrow inline-block mb-2">
                 {eyebrow}
               </span>
             )}
 
-            <h1 className="text-3xl md:text-4xl font-bold mt-2">
-              {title}
-            </h1>
+            {title && (
+              <h1 className="text-3xl md:text-4xl font-bold mb-3">
+                {title}
+              </h1>
+            )}
 
             {subtitle && (
-              <p className="text-base md:text-lg max-w-2xl mt-3 text-[var(--muted)]">
+              <p className="max-w-2xl text-base md:text-lg text-[var(--muted)]">
                 {subtitle}
               </p>
             )}

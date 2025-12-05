@@ -1,4 +1,3 @@
-import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -12,19 +11,20 @@ import Privacidade from "./pages/Privacidade";
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
+      {/* Cabeçalho fixo */}
       <Header />
 
-      <div className="flex-1 pt-20">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/solucao" element={<Solucao />} />
-          <Route path="/metodo" element={<Metodo />} />
-          <Route path="/quem-somos" element={<QuemSomos />} />
-          <Route path="/contato" element={<Contato />} />
-          <Route path="/privacidade" element={<Privacidade />} />
-        </Routes>
+      {/* Conteúdo principal com todas as seções na mesma página */}
+      <div className="flex-1 pt-16">
+        <Home />
+        <Solucao />
+        <Metodo />
+        <QuemSomos />
+        <Contato />
+        <Privacidade />
       </div>
 
+      {/* Rodapé */}
       <Footer />
     </div>
   );
