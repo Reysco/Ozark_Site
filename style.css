@@ -12,7 +12,7 @@
     /* Colors */
     --white-color: #fff;
     --dark-color: #252525;
-    --primary-color: #3b141c;
+    --primary-color: #040414;
     --secondary-color: #f3961c;
     --medium-gray-color: #ccc;
     --light-pink-color: #ffffff;
@@ -201,32 +201,41 @@ header .navbar{
 .about-section{
     padding: 120px 0;
     background: var(--light-pink-color);
+    min-height: 100vh;
 }
 
-.about-section .about-content{
+.about-section .about-container{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.about-section .about-top{
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 70px;
+    align-items: stretch;
 }
 
 .about-section .about-image-wrapper{
-    flex: 1;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .about-section .about-image-wrapper .about-image{
     width: 100%;
-    max-width: 820px;
-    height: auto;
+    height: 100%;
+    min-height: 420px;
     object-fit: cover;
+    border-radius: 18px;
+    display: block;
 }
 
 .about-section .about-details{
-    flex: 1;
+    width: 100%;
     max-width: 560px;
     text-align: left;
+    align-self: center;
 }
 
 .about-section .about-details .section-title{
@@ -261,6 +270,112 @@ header .navbar{
     color: var(--secondary-color);
 }
 
+/* About cards (extras) */
+.about-section .about-extras{
+    width: 100%;
+}
+
+.about-section .about-extras-title{
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: var(--font-weight-semibold);
+    color: #0f172a;
+    margin-bottom: 28px;
+}
+
+.about-section .about-cards-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 26px;
+}
+
+.about-section .about-wide-cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+/* About cards com animação igual Fundadores */
+.about-section .about-card {
+    background: var(--white-color);
+    border-radius: 24px;
+    padding: 26px;
+    box-shadow: 0 15px 40px rgba(2, 6, 23, 0.08);
+    transition: all 0.45s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+/* Overlay sutil no hover (igual Fundadores) */
+.about-section .about-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(37,99,235,0.08), transparent);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+/* Hover */
+.about-section .about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 70px rgba(37,99,235,0.25);
+}
+
+.about-section .about-card:hover::before {
+    opacity: 1;
+}
+
+/* Cards largos do About */
+.about-section .about-card-wide {
+    padding: 34px;
+}
+
+@media screen and (max-width: 900px) {
+    .about-section .about-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 45px rgba(37,99,235,0.18);
+    }
+}
+
+.about-section .about-card-title{
+    font-size: 1.05rem;
+    font-weight: var(--font-weight-semibold);
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.about-section .about-card-title-lg{
+    font-size: 1.55rem;
+    font-weight: var(--font-weight-semibold);
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.about-section .about-card-text{
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.about-section .about-card-kicker{
+    letter-spacing: 0.35em;
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-semibold);
+    color: #1d4ed8;
+    margin-bottom: 10px;
+}
+
+.about-section .about-card-list{
+    margin-top: 10px;
+    padding-left: 18px;
+    list-style: disc;
+    color: #334155;
+    line-height: 1.9;
+}
+
 /*Menu section sytling */
 .menu-section{
     color:var(--white-color);
@@ -269,11 +384,10 @@ header .navbar{
 }
 
 .menu-section .menu-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 110px;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    align-items: stretch;
 }
 
 .menu-section .menu-list .menu-item{
@@ -281,12 +395,13 @@ header .navbar{
     align-items: center;
     text-align: center;
     flex-direction: column;
-    justify-content: space-between;
-    width: calc(100% / 3 - 110px);
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .menu-section .menu-list .menu-item .menu-image{
-    max-width: 83%;
+    width: 100%;
+    max-width: 260px;
     aspect-ratio: 1;
     margin-bottom: 15px;
     object-fit: contain;
@@ -302,36 +417,208 @@ header .navbar{
     font-size: var(--font-size-m);
 }
 
-/* Testimonials section styling */
-.testimonials-section{
-    padding: 50px 0 100px;
-    background: var(--light-pink-color);
+/* Fundadores */
+.founders-section {
+    padding: 100px 0;
+    background: #ffffff;
 }
 
-.testimonials-section .testimonial{
-    user-select: none;
-    display: flex;
-    padding: 35px;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
 }
 
-.testimonials-section .testimonial .user-image{
-    width: 180px;
-    height: 180px;
+.founder-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 42px 38px;
+    box-shadow: 0 15px 40px rgba(2, 6, 23, 0.08);
+    transition: all 0.45s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.founder-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(37,99,235,0.08), transparent);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none; /* LIBERA CLIQUE NOS ÍCONES */
+}
+
+
+
+.founder-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 70px rgba(37,99,235,0.25);
+}
+
+.founder-card:hover::before {
+    opacity: 1;
+}
+
+.founder-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.founder-avatar img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin-bottom: 50px;
-    border-radius: var(--border-radius-circle);
 }
 
-.testimonials-section .testimonial .name{
+.founder-role {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2563eb;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.founder-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 14px;
+}
+
+.founder-description {
+    font-size: 1rem;
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.founder-quote {
+    font-style: italic;
+    color: #475569;
+    line-height: 1.7;
     margin-bottom: 16px;
-    font-size: var(--font-size-m);
 }
 
-.testimonials-section .testimonial .feedback{
-    line-height: 25px;
+.founder-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2563eb;
+    margin-top: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Ícone social do LinkedIn - Fundadores */
+.founder-social-link {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #2563eb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    font-size: 1.1rem;
+    margin-top: 18px;
+    transition: all 0.3s ease;
+}
+
+.founder-social-link:hover {
+    background: #2563eb;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+.founder-link i {
+    font-size: 1.2rem;
+}
+
+.founder-link:hover {
+    color: #1e40af;
+    transform: translateX(4px);
+}
+
+/* Container dos ícones sociais - Fundadores */
+.founder-socials {
+    display: flex;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+/* Ícone social individual */
+.founder-social-link {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #2563eb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.founder-social-link:hover {
+    background: #2563eb;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Citação destacada */
+.founder-quote {
+    position: relative;
+    font-style: italic;
+    color: #475569;
+    line-height: 1.8;
+    padding-left: 22px;
+    margin: 22px 0;
+}
+
+/* Barra lateral de citação */
+.founder-quote::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 4px;
+    height: calc(100% - 8px);
+    background: #2563eb;
+    border-radius: 4px;
+}
+
+/* Citação de maior impacto */
+.founder-quote.highlight {
+    font-size: 1.05rem;
+    color: #0f172a;
+    font-weight: 500;
+}
+
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .founders-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Responsivo */
+@media screen and (max-width: 900px) {
+    .founders-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .founder-card {
+        padding: 34px 28px;
+    }
 }
 
 /* Gallery section styling */
@@ -358,8 +645,8 @@ header .navbar{
     transition: 0.3s ease;
 }
 
-.gallery-section .gallery-list:hover .gallery-image{
-    transform: scale(1.3);
+.gallery-section .gallery-item:hover .gallery-image{
+    transform: scale(1.1);
 }
 
 /* Contact us section styling */
@@ -435,9 +722,18 @@ header .navbar{
 }
 
 .footer-section .section-content{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section .policity-text{
+    justify-self: end;
+}
+
+.footer-section .social-link-list{
+    justify-self: center;
 }
 
 .footer-section :where(.copyright-text, .social-link, .policy-link){
@@ -451,7 +747,7 @@ header .navbar{
 }
 
 .footer-section .social-link-list .social-link{
-font-size: var(--font-size-l);
+        font-size: var(--font-size-l);
 }
 
 .footer-section .social-link-list .social-link:hover, .footer-section .policy-text .policy-link:hover{
@@ -466,13 +762,49 @@ font-size: var(--font-size-l);
 /* Responsive media query code for max width 1024px */
 @media screen and (max-width: 1024px){
     .menu-section .menu-list{
-        gap: 60px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
     }
 
-    .menu-section .menu-list .menu-item{
-        width: calc(100% / 3 - 60px);
+    .about-section .about-cards-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
+/* Logo no header */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Imagem da logo */
+.nav-logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* Textos do logo */
+.nav-logo-texts {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.nav-logo-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--white-color);
+}
+
+.nav-logo-subtitle {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-top: 2px;
+}
+
 
 /* Responsive media query code for max width 900px */
 @media screen and (max-width: 900px){
@@ -483,16 +815,16 @@ font-size: var(--font-size-l);
         --font-size-xxl: 1.8rem;
     }
 
-body.show-mobile-menu header::before{
-    content: "";
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(5px);
-    background: rgba(0,0,0,0.2);
-}
+    body.show-mobile-menu header::before{
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(5px);
+        background: rgba(0,0,0,0.2);
+    }
 
     .navbar :where(#menu-close-button, #menu-open-button) {
         display: block;
@@ -523,7 +855,7 @@ body.show-mobile-menu header::before{
         background: var(--white-color);
         transition: left 0.2s ease;
     }
-    
+
     body.show-mobile-menu .navbar .nav-menu{
         left: 0;
     }
@@ -559,13 +891,19 @@ body.show-mobile-menu header::before{
     }
 
     /* About: image on top, centered */
-    .about-section .about-content{
-        flex-direction: column-reverse;
-        gap: 40px;
+    .about-section{
+        padding: 110px 0;
+    }
+
+    .about-section .about-top{
+        grid-template-columns: 1fr;
+        gap: 34px;
     }
 
     .about-section .about-details{
         text-align: center;
+        justify-self: center;
+        margin: 0 auto;
     }
 
     .about-section .about-details .section-title{
@@ -585,48 +923,65 @@ body.show-mobile-menu header::before{
     }
 
     .about-section .about-image-wrapper .about-image{
-        max-width: 520px;
+        min-height: 260px;
+    }
+
+    .about-section .about-cards-grid{
+        grid-template-columns: 1fr;
     }
 
     .menu-section .menu-list{
-        gap: 30px;
-    }
-
-    .menu-section .menu-list .menu-item{
-        width: calc(100% / 2 - 30px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
     }
 
     .menu-section .menu-list .menu-item .menu-image{
-        max-width: 200px;
+        max-width: 220px;
     }
 
-    gallery-section .gallery-list{
+    .gallery-section .gallery-list{
         gap: 30px;
     }
 
-    gallery-section .gallery-list .gallery-item{
+    .gallery-section .gallery-list .gallery-item{
         width: calc(100% / 2 - 30px);
-    }¨
+    }
 
     .contact-section .section-content{
         align-items: center;
         flex-direction: column-reverse;
+    }
+
+    .contact-section .contact-form{
+        max-width: 100%;
     }
 }
 
 /* Responsive media query code for max width 640px */
 @media screen and (max-width: 640px) {
     .menu-section .menu-list{
-        gap: 60px;
+        grid-template-columns: 1fr;
+        gap: 28px;
     }
 
-    .menu-section .menu-list .menu-item,
-    gallery-section .gallery-list .gallery-item{
-       width: 100%;
-    }    
+    .gallery-section .gallery-list .gallery-item{
+        width: 100%;
+    }
 
+/* Footer responsivo - volta para layout antigo no mobile */
     .footer-section .section-content{
+        display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 20px;
+        text-align: center;
+    }
+
+    .footer-section .social-link-list{
+        justify-content: center;
+    }
+
+    .footer-section .policity-text{
+        justify-self: unset;
     }
 }

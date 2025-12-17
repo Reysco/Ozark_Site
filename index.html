@@ -13,27 +13,37 @@
         <header>
             <nav class="navbar section-content">
                 <a href="#" class="nav-logo">
-                    <h2 class="logo-text">Ozark</h2>
+                    <img src="images/logo.png" alt="Logo Ozark" class="nav-logo-img">
+
+                    <div class="nav-logo-texts">
+                        <span class="nav-logo-title">Ozark</span>
+                        <span class="nav-logo-subtitle">Crescimento com dados e gestão</span>
+                    </div>
                 </a>
+
                 <ul class="nav-menu">
                     <button id="menu-close-button" class="fas fa-times"></button>
+
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
+                        <a href="#" class="nav-link">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
+                        <a href="#about" class="nav-link">Sobre Ozark</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#menu" class="nav-link">Menu</a>
+                        <a href="#menu" class="nav-link">Nossos Produtos</a>
+                    </li>
+
+                    <!-- ALTERADO: Testimonials removido -->
+                    <li class="nav-item">
+                        <a href="#fundadores" class="nav-link">Fundadores</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#gallery" class="nav-link">Galeria</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#testimonials" class="nav-link">Testimonials</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#gallery" class="nav-link">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
+                        <a href="#contact" class="nav-link">Contato</a>
                     </li>
                 </ul>
 
@@ -51,8 +61,8 @@
                         <p class="description">A Ozark Consultoria ajuda empresas do Centro-Oeste a crescer com clareza, processos e governança.</p>
 
                         <div class="buttons">
-                            <a href="#" class="button order-now"> Order Now</a>
-                            <a href="#" class="button contact-us">Contact Us</a>
+                            <a href="#" class="button order-now">Comprar Agora</a>
+                            <a href="#contact" class="button contact-us">Entre em Contato</a>
                         </div>
                     </div>
                     <div class="hero-image-wrapper">
@@ -63,14 +73,14 @@
 
             <!-- About section -->
             <section class="about-section" id="about">
-                <div class="section-content">
-                    <div class="about-content">
+                <div class="section-content about-container">
+                    <div class="about-top">
                         <div class="about-image-wrapper">
                             <img src="images/about-image.png" alt="About" class="about-image">
                         </div>
 
                         <div class="about-details">
-                            <h2 class="section-title">About Us</h2>
+                            <h2 class="section-title">Sobre Ozark</h2>
                             <p class="text">
                                 A Ozark nasce da combinação entre estratégia, dados e execução. Nosso foco é estruturar empresas
                                 para que o crescimento deixe de ser improviso e passe a ser resultado de gestão real, com controle,
@@ -78,9 +88,80 @@
                             </p>
 
                             <div class="social-link-list">
-                                <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a 
+                                    href="https://www.instagram.com/ozark_consultoria_financeira/" 
+                                    class="social-link" 
+                                    target="_blank"
+                                    aria-label="Instagram Ozark"
+                                >
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+
+                                <a 
+                                    href="https://wa.me/" 
+                                    class="social-link" 
+                                    target="_blank"
+                                    aria-label="WhatsApp Ozark"
+                                >
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+
+                                <a 
+                                    href="https://danilosantos27.app.n8n.cloud/webhook/64a79bf5-3565-4660-99f8-f967141860ee/chat"
+                                    class="social-link"
+                                    target="_blank"
+                                    aria-label="Chatbot Ozark"
+                                >
+                                    <i class="fa-solid fa-robot"></i>
+                                </a>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="about-extras">
+                        <h3 class="about-extras-title">Missão, Visão e Valores</h3>
+
+                        <div class="about-cards-grid">
+                            <article class="about-card">
+                                <h4 class="about-card-title">Missão</h4>
+                                <p class="about-card-text">
+                                    Impulsionar o crescimento de empresas por meio de gestão estruturada, dados confiáveis e decisões estratégicas.
+                                </p>
+                            </article>
+
+                            <article class="about-card">
+                                <h4 class="about-card-title">Visão</h4>
+                                <p class="about-card-text">
+                                    Ser referência em governança, dados e automação para empresas regionais, reconhecida por transformar negócios em
+                                    operações profissionais e escaláveis.
+                                </p>
+                            </article>
+
+                            <article class="about-card">
+                                <h4 class="about-card-title">Valores</h4>
+                                <p class="about-card-text">
+                                    Eficiência, transparência, responsabilidade com resultados, ética e visão de longo prazo.
+                                </p>
+                            </article>
+                        </div>
+
+                        <div class="about-wide-cards">
+                            <article class="about-card about-card-wide">
+                                <h4 class="about-card-title-lg">Nosso símbolo — a Onça</h4>
+                                <p class="about-card-text">
+                                    A onça traduz força, estratégia e precisão — valores que também movem a Ozark na transformação de empresas.
+                                </p>
+                            </article>
+
+                            <article class="about-card about-card-wide">
+                                <h4 class="about-card-title-lg">Para quem a Ozark foi criada</h4>
+                                <ul class="about-card-list">
+                                    <li>Empresas em fase de crescimento</li>
+                                    <li>Empresas que precisam de métricas claras</li>
+                                    <li>Empresas que querem previsibilidade e controle</li>
+                                    <li>Empresas que desejam profissionalizar suas operações</li>
+                                </ul>
+                            </article>
                         </div>
                     </div>
                 </div>
@@ -89,7 +170,7 @@
             <!-- Menu section -->
             <section class="menu-section" id="menu">
                 <div class="section-content">
-                    <h2 class="section-title">Our Menu</h2>
+                    <h2 class="section-title">Nossos Produtos</h2>
 
                     <ul class="menu-list">
                         <li class="menu-item">
@@ -119,88 +200,122 @@
                 </div>
             </section>
 
-            <!-- Testimonials section -->
-             <section class="testimonials-section" id="testimonials">
-                <h2 class="section-title">Testimonials</h2>
-                <div class="section-content">
-                    <div class="slider-container">
-                        <div class="slider-wrapper">
-                            <ul class="testimonials-list">
-                                <li class="testimonial">
-                                    <img src="images/Danilo.png" alt="User" class="user-image">
-                                    <h3 class="name">Danilo Santos</h3>
-                                    <i class="feedback">Profissional com atuação em análise de dados, planejamento estratégico e business analytics.</i>
-                                </li>
-                                <li class="testimonial">
-                                    <img src="images/Reydner.png" alt="User" class="user-image">
-                                    <h3 class="name">Reydner Miranda</h3>
-                                    <i class="feedback">Especialista em automação de processos, dados e integração com Inteligência Artificial.</i>
-                                </li>
-                            </ul>
+            <!-- Fundadores -->
+                <section class="founders-section" id="fundadores">
+                    <div class="section-content">
+                        <h2 class="section-title">Fundadores</h2>
+
+                        <div class="founders-grid">
+
+                            <!-- Danilo -->
+                            <article class="founder-card">
+                                <div class="founder-avatar">
+                                    <img src="images/Danilo.png" alt="Danilo Santos">
+                                </div>
+
+                                <p class="founder-role">FUNDADOR — ESTRATÉGIA & ECONOMIA</p>
+                                <h3 class="founder-name">Danilo Santos</h3>
+
+                                <p class="founder-description">
+                                    Profissional com atuação em análise de dados, planejamento estratégico e business analytics.
+                                </p>
+
+                                <blockquote class="founder-quote highlight">
+                                    “Pessoas com medo não mudam o país.”
+                                </blockquote>
+
+                                <div class="founder-socials">
+                                    <a 
+                                        href="https://www.linkedin.com/in/danilo-santos-8750ab231/"
+                                        class="founder-social-link"
+                                        target="_blank"
+                                        aria-label="LinkedIn Danilo Santos"
+                                    >
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+
+                                    <a 
+                                        href="https://www.instagram.com/danilo_santos1983/"
+                                        class="founder-social-link"
+                                        target="_blank"
+                                        aria-label="Instagram Danilo Santos"
+                                    >
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </div>
+
+                            </article>
+
+                            <!-- Reydner -->
+                            <article class="founder-card">
+                                <div class="founder-avatar">
+                                    <img src="images/Reydner.png" alt="Reydner Miranda">
+                                </div>
+
+                                <p class="founder-role">COFUNDADOR — AUTOMAÇÃO, DADOS & IA</p>
+                                <h3 class="founder-name">Reydner Miranda</h3>
+
+                                <p class="founder-description">
+                                    Especialista em automação de processos, dados e integração com Inteligência Artificial.
+                                </p>
+
+                                <blockquote class="founder-quote highlight">
+                                    “Dados contam a história, dashboards mostram o caminho. O dinheiro segue quem sabe ler.”
+                                </blockquote>
+
+                                <div class="founder-socials">
+                                    <a 
+                                        href="https://www.linkedin.com/in/reydnermiranda/"
+                                        class="founder-social-link"
+                                        target="_blank"
+                                        aria-label="LinkedIn Reydner Miranda"
+                                    >
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+
+                                    <a 
+                                        href="https://www.instagram.com/reydner_/"
+                                        class="founder-social-link"
+                                        target="_blank"
+                                        aria-label="Instagram Reydner Miranda"
+                                    >
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </div>
+
+                            </article>
+
                         </div>
                     </div>
-                </div>
-             </section>
+                </section>
 
             <!-- Gallery section -->
-              <section class="gallery-section" id="gallery">
-                <h2 class="section-title">Gallery</h2>
+            <section class="gallery-section" id="gallery">
+                <h2 class="section-title">Galeria</h2>
                 <div class="section-content">
                     <ul class="gallery-list">
-                        <li class="gallery-item">
-                            <img src="images/graficos.png" alt="Gallery" class="gallery-image">
-                        </li>
-                         <li class="gallery-item">
-                            <img src="images/graficos.png" alt="Gallery" class="gallery-image">
-                        </li>
-                         <li class="gallery-item">
-                            <img src="images/graficos.png" alt="Gallery" class="gallery-image">
-                        </li>
-                        <li class="gallery-item">
-                            <img src="images/graficos.png" alt="Gallery" class="gallery-image">
-                        </li>
-                        <li class="gallery-item">
-                            <img src="images/graficos.png" alt="Gallery" class="gallery-image">
-                        </li>
-                        <li class="gallery-item">
-                            <img src="images/graficos.png" alt="Gallery" class="gallery-image">
-                        </li>
-                         <li class="gallery-item">
-                            <img src="images/graficos.png" alt="Gallery" class="gallery-image">
-                        </li>
+                        <li class="gallery-item"><img src="images/graficos.png" alt="Gallery" class="gallery-image"></li>
+                        <li class="gallery-item"><img src="images/graficos.png" alt="Gallery" class="gallery-image"></li>
+                        <li class="gallery-item"><img src="images/graficos.png" alt="Gallery" class="gallery-image"></li>
+                        <li class="gallery-item"><img src="images/graficos.png" alt="Gallery" class="gallery-image"></li>
+                        <li class="gallery-item"><img src="images/graficos.png" alt="Gallery" class="gallery-image"></li>
+                        <li class="gallery-item"><img src="images/graficos.png" alt="Gallery" class="gallery-image"></li>
+                        <li class="gallery-item"><img src="images/graficos.png" alt="Gallery" class="gallery-image"></li>
                     </ul>
                 </div>
-              </section>
+            </section>
 
             <!-- Contact section -->
-             <section class="contact-section" id="contact">
-                <h2 class="section-title">Contact Us</h2>
+            <section class="contact-section" id="contact">
+                <h2 class="section-title">Entre em contato Conosco</h2>
                 <div class="section-content">
                     <ul class="contact-info-list">
-                        <li class="contact-info">
-                            <i class="fa-solid fa-location-crosshairs"></i>
-                            <p>123 avenida test, setor test, ca 123</p>
-                        </li>
-                        <li class="contact-info">
-                            <i class="fa-regular fa-envelope"></i>
-                            <p>ozark@website.com</p>
-                        </li>
-                        <li class="contact-info">
-                            <i class="fa-solid fa-phone"></i>
-                            <p>(123) 458-4515</p>
-                        </li>
-                        <li class="contact-info">
-                            <i class="fa-regular fa-clock"></i>
-                            <p>Segunda - Sexta: 9:00 - 17:00</p>
-                        </li>
-                        <li class="contact-info">
-                            <i class="fa-regular fa-clock"></i>
-                            <p>Sábado e Domingo: Fechado</p>
-                        </li>
-                        <li class="contact-info">
-                            <i class="fa-solid fa-globe"></i>
-                            <p>www.ozark.com</p>
-                        </li>
+                        <li class="contact-info"><i class="fa-solid fa-location-crosshairs"></i><p>123 avenida test, setor test, ca 123</p></li>
+                        <li class="contact-info"><i class="fa-regular fa-envelope"></i><p>ozark@website.com</p></li>
+                        <li class="contact-info"><i class="fa-solid fa-phone"></i><p>(123) 458-4515</p></li>
+                        <li class="contact-info"><i class="fa-regular fa-clock"></i><p>Segunda - Sexta: 9:00 - 17:00</p></li>
+                        <li class="contact-info"><i class="fa-regular fa-clock"></i><p>Sábado e Domingo: Fechado</p></li>
+                        <li class="contact-info"><i class="fa-solid fa-globe"></i><p>www.ozark.com</p></li>
                     </ul>
 
                     <form action="#" class="contact-form">
@@ -210,25 +325,52 @@
                         <button class="submit-button">Enviar</button>
                     </form>
                 </div>
-             </section>
+            </section>
 
-             <!-- Footer section -->
-              <footer class="footer-section">
+            <!-- Footer section -->
+            <footer class="footer-section">
                 <div class="section-content">
-                    <p class="copyright-text">© 2025 Ozark Consultoria</p>
+                    <p class="copyright-text">© 2025 Ozark Consultoria | Todos os direitos reservados</p>
 
                     <div class="social-link-list">
-                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
+                        <a 
+                            href="https://www.instagram.com/ozark_consultoria_financeira/" 
+                            class="social-link" 
+                            target="_blank"
+                            aria-label="Instagram Ozark"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
 
+                        <a 
+                            href="https://wa.me/" 
+                            class="social-link" 
+                            target="_blank"
+                            aria-label="WhatsApp Ozark"
+                        >
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <a 
+                            href="https://danilosantos27.app.n8n.cloud/webhook/64a79bf5-3565-4660-99f8-f967141860ee/chat"
+                            class="social-link"
+                            target="_blank"
+                            aria-label="Chatbot Ozark"
+                        >
+                            <i class="fa-solid fa-robot"></i>
+                        </a>
+                    </div>
                     <p class="policity-text">
-                        <a href="#" class="policy-link">Política de Privacidade</a>
+                        <a href="docs/Politica_de_Privacidade_Ozark.pdf" class="policy-link" download>
+                            Política de Privacidade
+                        </a>
                         <span class="separator">•</span>
-                        <a href="#" class="policy-link">Política de Reembolso</a>
+                        <a href="docs/Politica_de_Reembolso_Ozark.pdf" class="policy-link" download>
+                            Política de Reembolso
+                        </a>
                     </p>
                 </div>
-              </footer>
+            </footer>
         </main>
 
         <script src="script.js"></script>
