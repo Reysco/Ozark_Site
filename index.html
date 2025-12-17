@@ -171,30 +171,28 @@
             <section class="menu-section" id="menu">
                 <div class="section-content">
                     <h2 class="section-title">Nossos Produtos</h2>
-
+                    
                     <ul class="menu-list">
                         <li class="menu-item">
-                            <img src="images/graficos.png" alt="Hot Beverages" class="menu-image">
-                            <h3 class="name">Hot Beverages</h3>
-                            <p class="text">Teste teste teste</p>
+                            <img 
+                                src="images/grafico1.jpg"
+                                alt="Dashboard"
+                                class="menu-image produto-clicavel"
+                                data-image="images/grafico1.jpg"
+                            />
+                            <h3 class="name">Dashboard</h3>
+                            <p class="text">Dashboard interativo conforme sua necessidade</p>
                         </li>
 
                         <li class="menu-item">
-                            <img src="images/graficos.png" alt="Hot Beverages" class="menu-image">
-                            <h3 class="name">Hot Beverages</h3>
-                            <p class="text">Teste teste teste</p>
-                        </li>
-
-                        <li class="menu-item">
-                            <img src="images/graficos.png" alt="Hot Beverages" class="menu-image">
-                            <h3 class="name">Hot Beverages</h3>
-                            <p class="text">Teste teste teste</p>
-                        </li>
-
-                        <li class="menu-item">
-                            <img src="images/graficos.png" alt="Hot Beverages" class="menu-image">
-                            <h3 class="name">Hot Beverages</h3>
-                            <p class="text">Teste teste teste</p>
+                            <img 
+                                src="images/grafico2.jpg" 
+                                alt="Gráficos" 
+                                class="menu-image produto-clicavel"
+                                data-image="images/grafico2.jpg"
+                            />
+                            <h3 class="name">Gráficos</h3>
+                            <p class="text">Gráficos dinâmicos e estruturados</p>
                         </li>
                     </ul>
                 </div>
@@ -372,7 +370,23 @@
                 </div>
             </footer>
         </main>
+        <!-- Modal de imagem em tela cheia -->
+        <div id="modal-imagem" class="modal-imagem">
+            <span class="modal-fechar">&times;</span>
+
+            <button class="modal-nav modal-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <img class="modal-conteudo" id="modal-img">
+
+            <button class="modal-nav modal-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
 
         <script src="script.js"></script>
+        
+
     </body>
 </html>

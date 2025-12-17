@@ -401,7 +401,7 @@ header .navbar{
 
 .menu-section .menu-list .menu-item .menu-image{
     width: 100%;
-    max-width: 260px;
+    max-width: 500px;
     aspect-ratio: 1;
     margin-bottom: 15px;
     object-fit: contain;
@@ -759,6 +759,121 @@ header .navbar{
     color: var(--white-color);
 }
 
+/* Modal de imagem em tela cheia */
+.modal-imagem {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-imagem.ativo {
+    display: flex;
+}
+
+.modal-conteudo {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    animation: zoomImagem 0.3s ease;
+}
+
+@keyframes zoomImagem {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-fechar {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #ffffff;
+    font-size: 42px;
+    cursor: pointer;
+}
+
+/* Navegação do modal */
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    font-size: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-nav:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.modal-prev {
+    left: 28px;
+}
+
+.modal-next {
+    right: 28px;
+}
+
+/* Animação mais fluida */
+.modal-conteudo {
+    animation: slidePremium 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes slidePremium {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Esconde setas no mobile */
+@media (max-width: 768px) {
+    .modal-nav {
+        display: none;
+    }
+}
+
+
+
+/* Garantir que imagens dos produtos sejam clicáveis */
+.menu-item {
+    position: relative;
+}
+
+.menu-image.produto-clicavel {
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.menu-image.produto-clicavel:hover {
+    transform: scale(1.03);
+}
+
+
 /* Responsive media query code for max width 1024px */
 @media screen and (max-width: 1024px){
     .menu-section .menu-list{
@@ -804,6 +919,8 @@ header .navbar{
     color: var(--secondary-color);
     margin-top: 2px;
 }
+
+
 
 
 /* Responsive media query code for max width 900px */
@@ -936,7 +1053,7 @@ header .navbar{
     }
 
     .menu-section .menu-list .menu-item .menu-image{
-        max-width: 220px;
+        max-width: 500px;
     }
 
     .gallery-section .gallery-list{
