@@ -621,7 +621,9 @@ header .navbar{
     }
 }
 
+
 /* Gallery section styling */
+/*
 .gallery-section{
     padding: 50px 0 100px;
 }
@@ -648,6 +650,240 @@ header .navbar{
 .gallery-section .gallery-item:hover .gallery-image{
     transform: scale(1.1);
 }
+
+/* ================================
+   Nossos Serviços
+================================ */
+
+.services-section {
+    background: var(--dark-color);
+    padding: 100px 0;
+    color: var(--white-color);
+}
+
+.services-section .section-title {
+    color: var(--white-color);
+}
+
+.services-description {
+    max-width: 900px;
+    margin: -60px auto 60px;
+    text-align: center;
+    font-size: var(--font-size-m);
+    color: var(--white-color);
+    line-height: 1.7;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--light-pink-color);
+    border-radius: 24px;
+    padding: 34px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+    transition: all 0.45s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay hover igual ao padrão do site */
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(37,99,235,0.15), transparent);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 70px rgba(37,99,235,0.35);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.service-subtitle {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-bottom: 18px;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+.service-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* Responsivo */
+@media screen and (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-description {
+        padding: 0 10px;
+    }
+}
+
+/* ================================
+   Modelos de Contratação
+================================ */
+
+.services-pricing {
+    margin-top: 120px;
+    text-align: center;
+}
+
+.services-pricing-title {
+    font-size: 2rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--white-color);
+    margin-bottom: 16px;
+}
+
+.services-pricing-description {
+    max-width: 820px;
+    margin: 0 auto 60px;
+    font-size: var(--font-size-m);
+    color: white-color;
+    line-height: 1.7;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.pricing-card {
+    background: #ffffff;
+    color: #0f172a;
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+    transition: all 0.45s ease;
+    text-align: left;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 70px rgba(37,99,235,0.35);
+}
+
+/* Destaque do produto principal */
+.pricing-card-featured {
+    border: 2px solid #2563eb;
+}
+
+.pricing-badge {
+    display: inline-block;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.pricing-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.pricing-subtitle {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-bottom: 18px;
+}
+
+.pricing-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 22px;
+}
+
+.pricing-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.pricing-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+}
+
+.pricing-price {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.pricing-footer {
+    font-size: 1.1rem;
+    color: #e5e7eb;
+}
+
+/* Responsivo */
+@media screen and (max-width: 1024px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 
 /* Contact us section styling */
 .contact-section{
